@@ -1,24 +1,25 @@
 <html>
-  
+
   <head>
     <title>Country Info</title>
     <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   </head>
 
   <body>
     <p>Select the country you wish to learn about</p>
-    
+
     <select>
       <option disabled selected value> -- Select a Country -- </option>
-      <option value="USA">USA</option>
-      <option value="Costa Rica">Costa Rica</option>
-      <option value="Spain">Spain</option>
+      <option value="United%20States%20of%20America" id="USA">USA</option>
+      <option value="Costa%20Rica" id="CR">Costa Rica</option>
+      <option value="Spain" id="SP">Spain</option>
     </select>
-    
-    <button id="bttn">Get Country Data</button>
-        
+
+    <button id="bttn" onclick="requestData();">Get Country Data</button>
+
     <div id="apiStuff">
     </div>
   </body>
-  
+
 </html>
