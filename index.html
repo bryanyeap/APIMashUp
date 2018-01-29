@@ -30,11 +30,12 @@
            console.log(json['message']);
         });
 
-        $.getJSON('http://cors-proxy.htmldriven.com/?url=https://dog-api.kinduff.com/api/facts', function(json){
-           console.log(json['body'].substring(10, json['body'].length-17));
-           var pTag = document.createElement("p");
-           pTag.innerText = json['body'].substring(10, json['body'].length-17);
-           document.getElementById("apiStuff").appendChild(pTag);
+        $.getJSON('https://dog-api.kinduff.com/api/facts', function(json){
+           console.log(json);
+           //console.log(json['body'].substring(10, json['body'].length-17));
+           //var pTag = document.createElement("p");
+           //pTag.innerText = json['body'].substring(10, json['body'].length-17);
+           //document.getElementById("apiStuff").appendChild(pTag);
 
         });
     </script>
