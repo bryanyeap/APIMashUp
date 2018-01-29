@@ -7,7 +7,7 @@ function requestData() {
       country = optionList[i].value;
     }
   }
-  var url ="http://countryapi.gear.host/v1/Country/getCountries?pName=" + country;
+  var url ="https://countryapi.gear.host/v1/Country/getCountries?pName=" + country;
 
   var request = new XMLHttpRequest();
   request.open("GET", url, true);
