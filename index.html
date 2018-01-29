@@ -1,28 +1,21 @@
 <html>
   
   <head>
-    <title>Time Converter and Random Pic</title>
+    <title>Country Info</title>
     <script src="index.js"></script>
   </head>
 
   <body>
-    <p>Select the timezone you wish to convert from and to convert to</p>
+    <p>Select the country you wish to learn about</p>
     
     <select>
-      <option disabled selected value> -- select the before converted timezone -- </option>
-      <option value="EST">EST</option>
-      <option value="PST">PST</option>
-      <option value="MST">MST</option>
+      <option disabled selected value> -- Select a Country -- </option>
+      <option value="USA">USA</option>
+      <option value="Costa Rica">Costa Rica</option>
+      <option value="Spain">Spain</option>
     </select>
     
-     <select>
-      <option disabled selected value> -- select the after converted timezone -- </option>
-      <option value="EST">EST</option>
-      <option value="PST">PST</option>
-      <option value="MST">MST</option>
-    </select>
-    
-    <button id="convertBttn">Convert</button>
+    <button id="bttn">Get Country Data</button>
         
     <div id="apiStuff">
     </div>
