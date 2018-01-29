@@ -1,25 +1,43 @@
 <html>
 
   <head>
-    <title>Country Info</title>
-    <script src="index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <title>Get Dog Quotes</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <style>
+      body {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+
+      img {
+        width: 600px;
+      }
+    </style>
   </head>
 
   <body>
-    <p>Select the country you wish to learn about</p>
-
-    <select>
-      <option disabled selected value> -- Select a Country -- </option>
-      <option value="United%20States%20of%20America" id="USA">USA</option>
-      <option value="Costa%20Rica" id="CR">Costa Rica</option>
-      <option value="Spain" id="SP">Spain</option>
-    </select>
-
-    <button id="bttn" onclick="requestData();">Get Country Data</button>
-
     <div id="apiStuff">
+      <h3>RANDOM DOG IMAGE AND QUOTE</h3>
     </div>
-  </body>
 
+    <script>
+        $.getJSON('https://dog.ceo/api/breeds/image/random', function(json){
+          var ele = document.createElement("img");
+          ele.setAttribute("src", json['message']);
+          document.getElementById("apiStuff").appendChild(ele);
+           console.log(json['message']);
+        });
+
+        $.getJSON('http://cors-proxy.htmldriven.com/?url=https://dog-api.kinduff.com/api/facts', function(json){
+           console.log(json['body'].substring(10, json['body'].length-17));
+           var pTag = document.createElement("p");
+           pTag.innerText = json['body'].substring(10, json['body'].length-17);
+           document.getElementById("apiStuff").appendChild(pTag);
+
+        });
+    </script>
+
+  </body>
 </html>
